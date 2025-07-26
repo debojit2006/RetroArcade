@@ -7,16 +7,22 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
+    padding: 1rem;
 }
 
 #game-container {
+    width: 100%;
+    max-width: 800px; /* Set a max-width for desktop */
     border: 2px solid #f0f; /* retro-pink */
     box-shadow: 0 0 15px #f0f;
+    /* The canvas will determine the height */
 }
 
 canvas {
     background: #111;
     display: block;
+    width: 100%; /* Make canvas fill the container */
+    height: auto; /* Height will be set by JS to maintain aspect ratio */
 }
 
 .back-button {
