@@ -9,6 +9,7 @@
 <body>
     <section>
         <h1 class="game-title">Retro Tic-Tac-Toe</h1>
+        <h2 class="game-status"></h2>
         <div class="game-container">
             <div data-cell-index="0" class="cell"></div>
             <div data-cell-index="1" class="cell"></div>
@@ -20,10 +21,17 @@
             <div data-cell-index="7" class="cell"></div>
             <div data-cell-index="8" class="cell"></div>
         </div>
-        <h2 class="game-status"></h2>
-        <button class="game-restart">Restart Game</button>
     </section>
     <a href="../index.html" class="back-button">BACK TO ARCADE</a>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="modalMessage">Player X Wins!</h2>
+            <button class="game-restart modal-button">RESTART</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
