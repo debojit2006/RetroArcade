@@ -175,3 +175,23 @@ body {
     background-color: #fff;
     box-shadow: 0 0 20px #fff;
 }
+/* ADD THIS AT THE VERY END OF RetroArcade/style.css */
+
+@media (max-width: 600px) {
+    .arcade-header h1 {
+        font-size: 1.8rem; /* Smaller font size for the main title on mobile */
+    }
+
+    .game-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .game-card p {
+        font-size: 0.9rem;
+    }
+
+    .play-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
