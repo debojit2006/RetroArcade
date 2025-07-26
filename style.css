@@ -1,0 +1,177 @@
+/* =============================================== */
+/* == YOUR ORIGINAL CSS CODE (THE DESIGN SYSTEM) == */
+/* =============================================== */
+:root {
+    --font-size: 14px;
+    --background: #fff;
+    --foreground: oklch(.145 0 0);
+    --card: #fff;
+    --card-foreground: oklch(.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(.145 0 0);
+    --primary: #030213;
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(.95 .0058 264.53);
+    --secondary-foreground: #030213;
+    --muted: #ececf0;
+    --muted-foreground: #717182;
+    --accent: #e9ebef;
+    --accent-foreground: #030213;
+    --destructive: #d4183d;
+    --destructive-foreground: #fff;
+    --border: #0000001a;
+    --input: transparent;
+    --input-background: #f3f3f5;
+    --switch-background: #cbced4;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --ring: oklch(.708 0 0);
+    --chart-1: oklch(.646 .222 41.116);
+    --chart-2: oklch(.6 .118 184.704);
+    --chart-3: oklch(.398 .07 227.392);
+    --chart-4: oklch(.828 .189 84.429);
+    --chart-5: oklch(.769 .188 70.08);
+    --radius: .625rem;
+    --sidebar: oklch(.985 0 0);
+    --sidebar-foreground: oklch(.145 0 0);
+    --sidebar-primary: #030213;
+    --sidebar-primary-foreground: oklch(.985 0 0);
+    --sidebar-accent: oklch(.97 0 0);
+    --sidebar-accent-foreground: oklch(.205 0 0);
+    --sidebar-border: oklch(.922 0 0);
+    --sidebar-ring: oklch(.708 0 0);
+    --retro-cyan: #0ff;
+    --retro-pink: #f0f;
+    --retro-green: #0f0;
+    --retro-yellow: #ff0;
+    --retro-purple: #8000ff;
+    --retro-orange: #ff8000;
+    --retro-red: #ff0040;
+    --retro-blue: #0080ff;
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+    font-size: var(--font-size);
+}
+
+*, :after, :before, ::backdrop {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--retro-cyan);
+    box-shadow: 0 0 5px var(--retro-cyan);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #0000004d;
+    border-radius: 4px;
+}
+::selection {
+    background: var(--retro-cyan);
+    color: #000;
+    text-shadow: none;
+}
+
+/* ================================== */
+/* == NEW STYLES FOR THE ARCADE MENU == */
+/* ================================== */
+body {
+    background-color: #000;
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 255, 0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
+    font-family: 'Press Start 2P', var(--font-mono); /* Retro game font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.arcade-header h1 {
+    color: var(--retro-yellow);
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow:
+        0 0 5px var(--retro-yellow),
+        0 0 10px var(--retro-yellow),
+        0 0 20px var(--retro-orange);
+    margin-bottom: 2rem;
+    animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 5px var(--retro-yellow),
+            0 0 10px var(--retro-yellow),
+            0 0 20px var(--retro-orange);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.game-card {
+    background: #0a0a0aee;
+    border: 2px solid var(--retro-pink);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 15px var(--retro-pink);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 25px var(--retro-pink), 0 0 10px var(--retro-cyan);
+}
+
+.game-card h2 {
+    color: var(--retro-cyan);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px var(--retro-cyan);
+}
+
+.game-card p {
+    color: var(--card-foreground);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+}
+
+.play-button {
+    display: inline-block;
+    background-color: var(--retro-green);
+    color: #000;
+    font-family: 'Press Start 2P', var(--font-mono);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--retro-green);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.play-button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 20px #fff;
+}
