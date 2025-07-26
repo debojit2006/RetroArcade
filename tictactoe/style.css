@@ -1,0 +1,55 @@
+body {
+    font-family: "Press Start 2P", cursive;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.game-title {
+    color: #ff0; /* retro-yellow */
+    text-shadow: 0 0 10px #ff0;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 306px;
+    margin: 30px auto;
+    border: 2px solid #0ff; /* retro-cyan */
+    box-shadow: 0 0 15px #0ff;
+}
+
+.cell {
+    font-family: "Arial", sans-serif;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 1px #0ff; /* retro-cyan */
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.game-status {
+    color: #0f0; /* retro-green */
+    text-shadow: 0 0 5px #0f0;
+    margin-bottom: 20px;
+}
+
+.game-restart, .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f0f; /* retro-pink */
+    color: #000;
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
